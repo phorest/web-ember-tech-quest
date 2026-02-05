@@ -1,8 +1,9 @@
 import Route from '@ember/routing/route';
-import { redirect } from '@ember/routing';
-
+import { inject as service } from '@ember/service';
 export default class IndexRoute extends Route {
+  @service router;
+
   redirect() {
-    this.transitionTo('clients');
+    this.router.transitionTo('clients');
   }
 }
